@@ -5,3 +5,5 @@ export type FiltersType = {
   position?: Position;
   technology?: Technology[];
 }
+
+export type ThemeType = 'light' | 'dark';

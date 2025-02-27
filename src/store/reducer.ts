@@ -1,11 +1,12 @@
 import {createReducer} from "@reduxjs/toolkit";
 import {StateType} from "../types/state-type";
 import {isLoading, setEmployee, setEmployeesList, setError, switchTheme} from "./action";
+import { ThemeType } from "../types/filter-type";
 
 const initialState: StateType = {
   employees: [],
   filters: {},
-  theme: "light",
+  theme: localStorage.getItem('theme') as ThemeType || 'light',
   isLoading: true,
   error: null,
   selectedEmployee: null,
