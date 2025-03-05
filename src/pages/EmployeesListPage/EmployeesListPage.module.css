@@ -4,3 +4,23 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+.main {
+  padding-left: 180px;
+  padding-right: 180px;
+}
+
+.pageControls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.filtersBox {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 32px;
+  align-items:flex-start;
+  flex-direction: row;
+}

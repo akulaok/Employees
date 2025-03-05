@@ -12,13 +12,11 @@ function ToggleSwitch(): JSX.Element {
     dispatch(switchTheme(newTheme));
   };
 
-  console.log(useAppSelector((state) => state.theme));
-
   return (
     <label className={styles.switch}>
       <input
         type="checkbox"
-        checked={theme === "dark"} // Синхронизация с хранилищем
+        checked={theme === "dark"}
         onChange={handleThemeToggle}
       />
       <span className={`${styles.slider} ${styles.round}`}></span>
