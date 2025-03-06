@@ -1,0 +1,15 @@
+.text {
+  margin-right: 12px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 14.09px;
+}
+
+.text_active {
+  margin-right: 12px;
+  color: var(--blue-color);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 14.09px;
+  
+}

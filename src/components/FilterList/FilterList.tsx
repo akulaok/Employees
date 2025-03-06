@@ -1,10 +1,10 @@
 import {JSX, useEffect, useRef} from "react";
-import FilterOption from "../Filter/FilterOption";
+import FilterListOption from "../FilterListOption/FilterListOption";
 import styles from "./FilterList.module.css";
 import {FilterCategory} from "../../types/filter-type";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setActiveFilter} from "../../store/action";
-import FilterHeader from "../FilterHeader/FilterHeader";
+import FilterListHeader from "../FilterListHeader/FilterListHeader";
 
 type FilterListProps = {
   filterType: FilterCategory;
@@ -12,7 +12,7 @@ type FilterListProps = {
 };
 
 function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
-  const activeFilter = useAppSelector((state) => state.activeFilter);
+  const activeFilter = useAppSelector((state) => state.expandedFilter);
   const isOpen = activeFilter === filterType;
   const dispatch = useAppDispatch();
   const filterRef = useRef<HTMLFormElement>(null);
@@ -20,8 +20,6 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
   const toggleFilter = () => {
     dispatch(setActiveFilter(isOpen ? null : filterType));
   };
-
-  console.log(filterType);
 
   useEffect(() => {
     const closeOnOutsideClick = (event: MouseEvent) => {
@@ -40,11 +38,11 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
 
   return (
     <form className={styles.filter} ref={filterRef}>
-      <FilterHeader text={filterType} isOpen={isOpen} onClick={toggleFilter} />
+      <FilterListHeader text={filterType} isOpen={isOpen} onClick={toggleFilter} />
       {isOpen && (
         <ul className={styles.filtersList}>
           {Object.entries(filterOptions).map(([key, value]) => (
-            <FilterOption key={key} text={value} filterType={filterType} />
+            <FilterListOption key={key} text={value} filterType={filterType} />
           ))}
         </ul>
       )}

@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import FilterList from "../../components/FilterList/FilterList";
 import {Gender, Position, Technology} from "../../consts";
 import {FilterCategory} from "../../types/filter-type";
+import ChosenFilters from "../../components/ChosenFilters/ChosenFilters";
 
 function EmployeesListPage(): JSX.Element {
   return (
@@ -27,6 +28,7 @@ function EmployeesListPage(): JSX.Element {
             />
           </div>
         </div>
+        <ChosenFilters />
       </div>
     </div>
   );

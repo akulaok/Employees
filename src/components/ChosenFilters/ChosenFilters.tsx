@@ -1,0 +1,19 @@
+import {JSX} from "react";
+import styles from "./ChosenFilters.module.css";
+import FilterTagList from "../FilterTagList/FilterTagList";
+
+function ChosenFilters(): JSX.Element {
+  return (
+    <div className={styles.backgroundWrapper}>
+      <div className={styles.main}>
+        <div className={styles.filtersWrapper}>
+          <span className={styles.text}>Выбранные фильтры:</span>
+          <FilterTagList />
+        </div>
+        <button className={styles.button}>Найти</button>
+      </div>
+    </div>
+  );
+}
+
+export default ChosenFilters;

@@ -31,7 +31,7 @@
   left: 3px;
   bottom: 3px;
   background-color: white;
-  background-image: url('../../general-style/img/sun.svg');
+  background-image: url('../../general-style/img/themeImg/sun.svg');
   background-size: 14px 14px; 
   background-repeat: no-repeat;
   background-position: center;
@@ -42,7 +42,7 @@ input:checked+.slider:before {
   transform: translateX(30px);
   background-size: 17px 17px; 
   background-position: 2px 2px;;
-  background-image: url('../../general-style/img/Moon.svg');
+  background-image: url('../../general-style/img/themeImg/Moon.svg');
 }
 
 .slider.round {

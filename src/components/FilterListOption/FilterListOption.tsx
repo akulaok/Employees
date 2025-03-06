@@ -2,15 +2,15 @@ import {JSX, memo} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {FilterCategory, FilterValue} from "../../types/filter-type";
 import {setUpdateFilters} from "../../store/action";
-import styles from "./FilterOption.module.css";
+import styles from "./FilterListOption.module.css";
 
 
-type FilterOptionProps = {
+type FilterListOptionProps = {
   text: string;
   filterType: FilterCategory;
 };
 
-function FilterOption({text, filterType}: FilterOptionProps): JSX.Element {
+function FilterListOption({text, filterType}: FilterListOptionProps): JSX.Element {
   const filters = useAppSelector(
     (state) => state.filters[filterType] || ({} as Record<FilterValue, boolean>)
   );
@@ -34,4 +34,4 @@ function FilterOption({text, filterType}: FilterOptionProps): JSX.Element {
   );
 }
 
-export default memo(FilterOption);
+export default memo(FilterListOption);

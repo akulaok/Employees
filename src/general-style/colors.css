@@ -1,5 +1,7 @@
 :root {
-  --black-color: rgba(0, 0, 0, 1);
-  --blue-shadow-color:rgba(57, 113, 164, 0.25);
+  --black-color: rgba(41, 41, 41, 1);
+  --blue-shadow-color: rgba(57, 113, 164, 0.25);
   --blue-color: #155DA4;
+  --gray-background-color: rgba(242, 242, 242, 1);
+  --white-color: rgba(255, 255, 255, 1);
 }

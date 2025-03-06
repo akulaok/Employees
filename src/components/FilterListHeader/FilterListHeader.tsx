@@ -1,16 +1,16 @@
 import { JSX } from "react";
-import styles from "./FilterHeader.module.css";
+import styles from "./FilterListHeader.module.css";
 
-type FilterHeaderProps = {
+type FilterListHeaderProps = {
   text: string;
   isOpen: boolean;
   onClick: () => void;
 };
 
-function FilterHeader({ text, isOpen, onClick }: FilterHeaderProps): JSX.Element {
+function FilterListHeader({ text, isOpen, onClick }: FilterListHeaderProps): JSX.Element {
   return (
     <div onClick={onClick}>
-      <span className={styles.text}>{text}</span>
+      <span className={isOpen ? styles.text_active : styles.text}>{text}</span>
       <img
         src={
           isOpen
@@ -23,4 +23,4 @@ function FilterHeader({ text, isOpen, onClick }: FilterHeaderProps): JSX.Element
   );
 }
 
-export default FilterHeader;
+export default FilterListHeader;

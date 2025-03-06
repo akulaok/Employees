@@ -5,16 +5,13 @@
   box-sizing: border-box;
 }
 
-.main {
-  padding-left: 180px;
-  padding-right: 180px;
-}
-
 .pageControls {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
+  padding-left: 180px;
+  padding-right: 180px;
 }
 
 .filtersBox {

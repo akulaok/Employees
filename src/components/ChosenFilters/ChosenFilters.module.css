@@ -1,0 +1,43 @@
+.backgroundWrapper {
+  background-color: var(--gray-background-color);
+  width: 100%;
+}
+
+.main {
+  min-height: 71px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 180px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.text {
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 20px;
+  min-width: 206px;
+}
+
+.filtersWrapper {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.button {
+  height: 45px;
+  width: 146px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20.8px;
+  font-family: Raleway;
+}

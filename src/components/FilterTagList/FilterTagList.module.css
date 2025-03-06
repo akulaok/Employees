@@ -1,0 +1,15 @@
+.tagList {
+  display: flex;
+  gap: 23px;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.text{
+font-weight: 400;
+font-size: 16px;
+line-height: 18.78px;
+color: var(--black-color);
+}
