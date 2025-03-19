@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AppRoute } from './consts';
 import './general-style/index.css'
-import EmployeesListPage from './pages/EmployeesListPage/EmployeesListPage';
+import EmployeeListPage from './pages/EmployeeListPage/EmployeeListPage';
 import useRestoreFiltersFromQuery from './hooks/useRestoreFiltersFromQuery';
 import useSyncFiltersWithQuery from './hooks/useSyncFiltersWithQuery';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={AppRoute.EmployeesList} element={<EmployeesListPage/>} />
+        <Route path={AppRoute.EmployeesList} element={<EmployeeListPage/>} />
       </Routes>
     </Router>
   );

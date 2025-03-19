@@ -4,20 +4,21 @@ import {FilterCategory, FilterValue} from "../../types/filter-type";
 import {setUpdateFilters} from "../../store/action";
 import styles from "./FilterListOption.module.css";
 
-
-type FilterListOptionProps = {
-  text: string;
-  filterType: FilterCategory;
+type FilterListOptionProps<T extends FilterCategory> = {
+  text: FilterValue;
+  filterType: T;
 };
 
-function FilterListOption({text, filterType}: FilterListOptionProps): JSX.Element {
-  const filters = useAppSelector(
-    (state) => state.filters[filterType] || ({} as Record<FilterValue, boolean>)
-  );
+function FilterListOption<T extends FilterCategory>({
+  text,
+  filterType,
+}: FilterListOptionProps<T>): JSX.Element {
+  const filters = useAppSelector((state) => state.filters);
+
   const dispatch = useAppDispatch();
-  const isChecked = !!filters[text as keyof typeof filters];
+  const isChecked = (filters[filterType] as Record<FilterValue, boolean>)[text];
   const handleCheck = () => {
-    dispatch(setUpdateFilters({filterType, value: text as FilterValue}));
+    dispatch(setUpdateFilters({filterType, value: text}));
   };
 
   return (

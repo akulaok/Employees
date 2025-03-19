@@ -1,7 +1,7 @@
 export type EmployeesListParams = {
   page: number;
   count: number;
-  gender?: 'Male' | 'Female';
+  gender?: string[];
   position?: string[];
   stack?: string[];
 };

@@ -2,6 +2,9 @@
   --black-color: rgba(41, 41, 41, 1);
   --blue-shadow-color: rgba(57, 113, 164, 0.25);
   --blue-color: #155DA4;
-  --gray-background-color: rgba(242, 242, 242, 1);
+  --gray-color: rgba(242, 242, 242, 1);
   --white-color: rgba(255, 255, 255, 1);
+  --gray-text-color: rgba(176, 176, 176, 1);
+  --active-blue-color: #104376;
+
 }

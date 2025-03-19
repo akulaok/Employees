@@ -1,0 +1,45 @@
+.wrapper {
+  width: 100%;
+  padding: 0 180px;
+  box-sizing: border-box;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+tr {
+  height: 79px;
+  border-top: 1px solid var(--gray-color);
+  padding: 28px 12px;
+  box-sizing: border-box;
+}
+
+tbody tr:hover {
+  background-color: var(--gray-color);
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: middle;
+  padding: 28px 12px;
+  box-sizing: border-box;
+}
+
+th {
+  color: var(--gray-text-color);
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+td {
+  font-family: Raleway;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+}

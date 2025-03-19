@@ -1,12 +1,13 @@
 import {JSX} from "react";
-import styles from "./EmployeesListPage.module.css";
+import styles from "./EmployeeListPage.module.css";
 import Header from "../../components/Header/Header";
 import FilterList from "../../components/FilterList/FilterList";
 import {Gender, Position, Technology} from "../../consts";
 import {FilterCategory} from "../../types/filter-type";
 import ChosenFilters from "../../components/ChosenFilters/ChosenFilters";
+import EmpoyeesTable from "../../components/EmlpoyeeTable/EmlpoyeeTable";
 
-function EmployeesListPage(): JSX.Element {
+function EmployeeListPage(): JSX.Element {
   return (
     <div className={styles.page}>
       <Header />
@@ -29,9 +30,10 @@ function EmployeesListPage(): JSX.Element {
           </div>
         </div>
         <ChosenFilters />
+        <EmpoyeesTable/>
       </div>
     </div>
   );
 }
 
-export default EmployeesListPage;
+export default EmployeeListPage;

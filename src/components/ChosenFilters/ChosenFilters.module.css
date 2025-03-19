@@ -1,5 +1,5 @@
 .backgroundWrapper {
-  background-color: var(--gray-background-color);
+  background-color: var(--gray-color);
   width: 100%;
 }
 
@@ -40,4 +40,15 @@
   font-size: 16px;
   line-height: 20.8px;
   font-family: Raleway;
+}
+
+.button:hover{
+  box-shadow: 0px 4px 4px 0px #00000040 inset;
+  cursor: pointer;
+}
+
+.button:active{
+  box-shadow: 0px 4px 4px 0px #00000040 inset;
+  cursor: pointer;
+  color: var(--gray-text-color);
 }
