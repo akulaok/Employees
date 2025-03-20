@@ -1,6 +1,6 @@
 export enum AppRoute {
   EmployeesList = "/",
-  Profile = "/employee/:id",
+  Profile = "/employe/:id",
 }
 
 export enum Gender {
@@ -26,8 +26,8 @@ export enum Technology {
 }
 
 export enum Actions {
-  set_employee_list = "employee/setList",
-  set_employe = "employee/setEmploye",
+  set_employees_list = "employees/setList",
+  set_employe = "employe/setEmploye",
   set_error = "app/setError",
   set_is_loading = "app/isLoading",
   switch_theme = "app/switchTheme",
@@ -35,7 +35,7 @@ export enum Actions {
   set_breadcrumbs = "app/setBreadcrumbs",
   set_active_filter = "filters/setActiveFilter",
   set_filters = "filters/setFilters",
-  // set_tags = 'filters/setTags'
+  set_found_employees_list = "employees/setFoundList",
 }
 
 export const TIMEOUT_SHOW_ERROR = 2000;

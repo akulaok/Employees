@@ -1,19 +1,19 @@
-import { useEffect, useCallback, useRef } from "react";
-import { getEmployeesList } from "../store/api-action";
-import { getCurrentFilters } from "../utils/filters";
-import { useAppDispatch, useAppSelector } from ".";
+import {useEffect, useCallback, useRef} from "react";
+import {getEmployeesList} from "../store/api-action";
+import {getCurrentFilters} from "../utils/filters";
+import {useAppDispatch, useAppSelector} from ".";
 
 export const useEmployees = () => {
   const dispatch = useAppDispatch();
   const filters = useAppSelector((state) => state.filters);
-  const { employee } = useAppSelector((state) => ({
-    employee: state.employee,
-  }));
+  const employees = useAppSelector((state) => state.foundEmployees);
   const prevFiltersRef = useRef<Record<string, string[] | undefined>>({});
 
-  const updateEmployeeList = useCallback(() => {
+  const updateEmployeesList = useCallback(() => {
     const currentFilters = getCurrentFilters(filters);
-    if (JSON.stringify(currentFilters) !== JSON.stringify(prevFiltersRef.current)) {
+    if (
+      JSON.stringify(currentFilters) !== JSON.stringify(prevFiltersRef.current)
+    ) {
       prevFiltersRef.current = currentFilters;
       dispatch(
         getEmployeesList({
@@ -26,10 +26,10 @@ export const useEmployees = () => {
   }, [dispatch, filters]);
 
   useEffect(() => {
-    if (!employee.length) {
-      updateEmployeeList();
+    if (!employees.length) {
+      updateEmployeesList();
     }
-  }, [employee.length, updateEmployeeList]);
+  }, [employees.length, updateEmployeesList]);
 
-  return { employee, updateEmployeeList };
+  return {employees, updateEmployeesList};
 };

@@ -1,4 +1,4 @@
-export type EmployeeType = {
+export type EmployeType = {
   id: number;
   name: string;
   photo: string;
@@ -10,4 +10,4 @@ export type EmployeeType = {
   dateOfEmployment: string;
 };
 
-export type EmployeesListType = EmployeeType[];
+export type EmployeesListType = EmployeType[];

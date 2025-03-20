@@ -7,7 +7,7 @@
   min-height: 71px;
   width: 100%;
   box-sizing: border-box;
-  padding: 13px 180px;
+  padding: 13px calc((100% - 80%) / 2);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -42,12 +42,12 @@
   font-family: Raleway;
 }
 
-.button:hover{
+.button:hover {
   box-shadow: 0px 4px 4px 0px #00000040 inset;
   cursor: pointer;
 }
 
-.button:active{
+.button:active {
   box-shadow: 0px 4px 4px 0px #00000040 inset;
   cursor: pointer;
   color: var(--gray-text-color);

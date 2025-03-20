@@ -1,22 +1,22 @@
 import {Gender, Position, Technology} from "../consts";
 import {store} from "../store";
-import {EmployeesListType, EmployeeType} from "./empoyee-type";
-import {FilterCategory, FilterValue, TagsType, ThemeType} from "./filter-type";
+import {EmployeesListType, EmployeType} from "./empoyee-type";
+import {FilterCategory, ThemeType} from "./filter-type";
 
 export type AppDispatch = typeof store.dispatch;
 
 export type State = ReturnType<typeof store.getState>;
 
 export type StateType = {
-  employee: EmployeesListType;
+  employees: EmployeesListType;
+  foundEmployees: EmployeesListType;
   filters: FiltersState;
   expandedFilter: FilterCategory | null;
   theme: ThemeType;
   isLoading: boolean;
   error: string | null;
-  selectedEmployee: EmployeeType | null;
+  selectedEmploye: EmployeType | null;
   breadcrumbs: {name: string; url?: string}[];
-  // tags: TagsType;
 };
 
 export type FiltersState = {

@@ -1,8 +1,8 @@
 import {JSX} from "react";
-import {EmployeeType} from "../../types/empoyee-type";
+import {EmployeType} from "../../types/empoyee-type";
 
 type EmployeesTableRowProps = {
-  employe: EmployeeType;
+  employe: EmployeType;
 };
 
 function EmployeesTableRow({ employe }: EmployeesTableRowProps): JSX.Element {

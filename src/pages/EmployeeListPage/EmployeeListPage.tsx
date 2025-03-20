@@ -6,34 +6,38 @@ import {Gender, Position, Technology} from "../../consts";
 import {FilterCategory} from "../../types/filter-type";
 import ChosenFilters from "../../components/ChosenFilters/ChosenFilters";
 import EmpoyeesTable from "../../components/EmlpoyeeTable/EmlpoyeeTable";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
-function EmployeeListPage(): JSX.Element {
+function EmployeesListPage(): JSX.Element {
   return (
     <div className={styles.page}>
       <Header />
       <div className={styles.main}>
         <div className={styles.pageControls}>
-          <h1>Список сотрудников</h1>
-          <div className={styles.filtersBox}>
-            <FilterList
-              filterType={FilterCategory.Position}
-              filterOptions={Position}
-            />
-            <FilterList
-              filterType={FilterCategory.Gender}
-              filterOptions={Gender}
-            />
-            <FilterList
-              filterType={FilterCategory.Technology}
-              filterOptions={Technology}
-            />
+          <div className={styles.pageFilters}>
+            <h1>Список сотрудников</h1>
+            <div className={styles.filtersBox}>
+              <FilterList
+                filterType={FilterCategory.Position}
+                filterOptions={Position}
+              />
+              <FilterList
+                filterType={FilterCategory.Gender}
+                filterOptions={Gender}
+              />
+              <FilterList
+                filterType={FilterCategory.Technology}
+                filterOptions={Technology}
+              />
+            </div>
           </div>
+          <SearchBar />
         </div>
         <ChosenFilters />
-        <EmpoyeesTable/>
+        <EmpoyeesTable />
       </div>
     </div>
   );
 }
 
-export default EmployeeListPage;
+export default EmployeesListPage;

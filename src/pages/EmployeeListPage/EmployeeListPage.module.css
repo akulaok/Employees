@@ -7,17 +7,25 @@
 
 .pageControls {
   display: flex;
+  padding-left: calc((100% - 80%) / 2);
+  padding-right: calc((100% - 80%) / 2);
+  flex-direction: column;
+  padding-bottom: 28px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pageFilters {
+  display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
   align-items: center;
-  padding-left: 180px;
-  padding-right: 180px;
 }
 
 .filtersBox {
   display: flex;
   flex-wrap: nowrap;
   gap: 32px;
-  align-items:flex-start;
+  align-items: flex-start;
   flex-direction: row;
 }

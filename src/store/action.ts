@@ -1,13 +1,15 @@
 import {createAction} from "@reduxjs/toolkit";
-import {EmployeesListType, EmployeeType} from "../types/empoyee-type";
+import {EmployeesListType, EmployeType} from "../types/empoyee-type";
 import {Actions} from "../consts";
-import { FilterCategory, FilterValue, TagsType} from "../types/filter-type";
+import {FilterCategory, FilterValue} from "../types/filter-type";
 
-export const setEmployeeList = createAction<EmployeesListType>(
-  Actions.set_employee_list
+export const setEmployeesList = createAction<EmployeesListType>(
+  Actions.set_employees_list
 );
-export const setEmploye = createAction<EmployeeType>(Actions.set_employe);
-
+export const setFoundEmployeesList = createAction<EmployeesListType>(
+  Actions.set_found_employees_list
+);
+export const setEmploye = createAction<EmployeType>(Actions.set_employe);
 export const setError = createAction<string | null>(Actions.set_error);
 export const isLoading = createAction<boolean>(Actions.set_is_loading);
 export const switchTheme = createAction<"light" | "dark">(Actions.switch_theme);

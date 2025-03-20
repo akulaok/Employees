@@ -1,10 +1,10 @@
 import {JSX} from "react";
 import EmpoyeesTableRow from "../EmployeeTableRow/EmpoyeeTableRow";
 import styles from "./EmlpoyeeTable.module.css";
-import { useEmployees } from "../../hooks/useEmployees";
+import {useEmployees} from "../../hooks/useEmployees";
 
 function EmpoyeesTable(): JSX.Element {
-  const { employee } = useEmployees();
+  const {employees} = useEmployees();
 
   return (
     <div className={styles.wrapper}>
@@ -18,11 +18,13 @@ function EmpoyeesTable(): JSX.Element {
           </tr>
         </thead>
         <tbody>
-          {employee.length ? employee.map((employe) => (
-            <EmpoyeesTableRow key={employe.id} employe={employe} />
-          )) : 
-            <div>упс, тут никого нет </div>
-          }
+          {employees.length ? (
+            employees.map((employe) => (
+              <EmpoyeesTableRow key={employe.id} employe={employe} />
+            ))
+          ) : (
+            <span></span>
+          )}
         </tbody>
       </table>
     </div>

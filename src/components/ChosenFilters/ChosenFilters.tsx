@@ -4,7 +4,7 @@ import FilterTagList from "../FilterTagList/FilterTagList";
 import { useEmployees } from "../../hooks/useEmployees";
 
 function ChosenFilters(): JSX.Element {
-  const { updateEmployeeList } = useEmployees();
+  const { updateEmployeesList } = useEmployees();
 
   return (
     <div className={styles.backgroundWrapper}>
@@ -13,7 +13,7 @@ function ChosenFilters(): JSX.Element {
           <span className={styles.text}>Выбранные фильтры:</span>
           <FilterTagList />
         </div>
-        <button className={styles.button} onClick={updateEmployeeList}>
+        <button className={styles.button} onClick={updateEmployeesList}>
           Найти
         </button>
       </div>

@@ -16,3 +16,4 @@ export const getCurrentFilters = (filters: FiltersState) => ({
   position: extractSelectedFilters(filters[FilterCategory.Position]),
   stack: extractSelectedFilters(filters[FilterCategory.Technology]),
 });
+

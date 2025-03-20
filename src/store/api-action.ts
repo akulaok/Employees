@@ -1,10 +1,10 @@
 import {AxiosInstance} from "axios";
 import {AppDispatch, State} from "../types/state-type";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {isLoading, setEmploye, setEmployeeList, setError} from "./action";
+import {isLoading, setEmploye, setEmployeesList, setError} from "./action";
 import {Actions, TIMEOUT_SHOW_ERROR} from "../consts";
 import {store} from ".";
-import {EmployeesListType, EmployeeType} from "../types/empoyee-type";
+import {EmployeesListType, EmployeType} from "../types/empoyee-type";
 import {EmployeesListParams} from "../types/api-type";
 
 export const clearErrorAction = createAsyncThunk(Actions.clear_error, () => {
@@ -38,12 +38,12 @@ export const getEmployeesList = createAsyncThunk<
     state: State;
     extra: AxiosInstance;
   }
->(Actions.set_employee_list, async (params, {dispatch, extra: api}) => {
+>(Actions.set_employees_list, async (params, {dispatch, extra: api}) => {
   const queryParams = buildQueryParams(params);
 
   dispatch(isLoading(true));
   const {data} = await api.get<EmployeesListType>(`?${queryParams.toString()}`);
-  dispatch(setEmployeeList(data));
+  dispatch(setEmployeesList(data));
   dispatch(isLoading(false));
 });
 
@@ -55,7 +55,7 @@ export const getEmployee = createAsyncThunk<
     state: State;
     extra: AxiosInstance;
   }
->(Actions.set_employe, async (employeeId, {dispatch, extra: api}) => {
-  const {data} = await api.get<EmployeeType>(`/${employeeId}`);
+>(Actions.set_employe, async (employeId, {dispatch, extra: api}) => {
+  const {data} = await api.get<EmployeType>(`/${employeId}`);
   dispatch(setEmploye(data));
 });
