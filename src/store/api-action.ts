@@ -24,7 +24,7 @@ const buildQueryParams = (params: EmployeesListParams): string => {
     params.stack.forEach((tech) => queryParams.append("Stack", tech));
   }
   if (params.gender) {
-    params.gender.forEach((g) => queryParams.append("Gender", g));
+    params.gender.forEach((gender) => queryParams.append("Gender", gender));
   }
 
   return queryParams.toString();

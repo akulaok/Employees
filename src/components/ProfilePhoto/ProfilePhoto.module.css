@@ -1,0 +1,11 @@
+.photoWrapper {
+  height: 163px;
+  width: 163px;
+}
+
+.photo {
+  height: 163px;
+  width: 163px;
+  border-radius: 50%;
+  text-align: center;
+}

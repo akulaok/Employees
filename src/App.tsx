@@ -4,6 +4,7 @@ import './general-style/index.css'
 import useRestoreFiltersFromQuery from './hooks/useRestoreFiltersFromQuery';
 import useSyncFiltersWithQuery from './hooks/useSyncFiltersWithQuery';
 import EmployeesListPage from './pages/EmployeeListPage/EmployeeListPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 function App() {
   useRestoreFiltersFromQuery();
@@ -11,7 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path={AppRoute.EmployeesList} element={<EmployeesListPage/>} />
+        <Route path={AppRoute.EmployeesList} element={<EmployeesListPage />} />
+        <Route path={AppRoute.Profile} element={<ProfilePage/>}/>
       </Routes>
     </Router>
   );

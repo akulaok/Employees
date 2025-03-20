@@ -1,6 +1,6 @@
 import {JSX} from "react";
 import { useAppSelector} from "../../hooks";
-import Tag from "../Tag/Tag";
+import FilterTag from "../FilterTag/FilterTag";
 import styles from "./FilterTagList.module.css";
 import { FilterCategory, FilterValue } from "../../types/filter-type";
 
@@ -14,7 +14,7 @@ function FilterTagList(): JSX.Element {
   return (
     <div className={styles.tagList}>
       {tags.map(({ tag, filterType }) => (
-        <Tag key={tag} text={tag} filterType={filterType} />
+        <FilterTag key={tag} text={tag} filterType={filterType} />
       ))}
     </div>
   );

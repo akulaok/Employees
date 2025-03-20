@@ -1,15 +1,15 @@
 import {JSX} from "react";
-import styles from "./Tag.module.css";
+import styles from "./FilterTag.module.css";
 import {FilterCategory, FilterValue} from "../../types/filter-type";
 import {useAppDispatch} from "../../hooks";
 import {setUpdateFilters} from "../../store/action";
 
-type TagProps = {
+type FilterTagProps = {
   text: string;
   filterType: FilterCategory;
 };
 
-function Tag({text, filterType}: TagProps): JSX.Element {
+function FilterTag({text, filterType}: FilterTagProps): JSX.Element {
   const dispatch = useAppDispatch();
 
   const handleDelete = () => {
@@ -24,4 +24,4 @@ function Tag({text, filterType}: TagProps): JSX.Element {
   );
 }
 
-export default Tag;
+export default FilterTag;

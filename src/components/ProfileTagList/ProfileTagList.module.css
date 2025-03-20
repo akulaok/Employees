@@ -1,0 +1,4 @@
+.tagsBox {
+  display: flex;
+  gap: 16px;
+}
