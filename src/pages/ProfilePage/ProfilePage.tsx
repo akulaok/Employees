@@ -5,6 +5,7 @@ import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {getEmployee} from "../../store/api-action";
 import ProfileMainInfo from "../../components/ProfileMainInfo/ProfileMainInfo";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 function ProfilePage(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ function ProfilePage(): JSX.Element {
   return (
     <div className={styles.page}>
       <Header />
+      <Breadcrumbs/>
       <ProfileHeader employe={employe} />
       <ProfileMainInfo employe={employe} />
     </div>

@@ -7,11 +7,13 @@ import {FilterCategory} from "../../types/filter-type";
 import ChosenFilters from "../../components/ChosenFilters/ChosenFilters";
 import EmpoyeesTable from "../../components/EmlpoyeeTable/EmlpoyeeTable";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 function EmployeesListPage(): JSX.Element {
   return (
     <div className={styles.page}>
       <Header />
+      <Breadcrumbs/>
       <div className={styles.main}>
         <div className={styles.pageControls}>
           <div className={styles.pageFilters}>

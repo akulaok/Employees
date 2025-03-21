@@ -1,7 +1,11 @@
 export enum AppRoute {
-  EmployeesList = "/",
-  Profile = "/employe/:id",
+  EmployeesList = "/employees",
+  Profile = "/employees/:id",
 }
+
+export const RouteNames: Record<string, string> = {
+  [AppRoute.EmployeesList]: "Список сотрудников",
+};
 
 export enum Gender {
   Male = "Male",
