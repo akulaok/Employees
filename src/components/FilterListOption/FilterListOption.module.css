@@ -24,11 +24,19 @@
   transition: all 0.3s ease;
 }
 
-.input:checked + .checkboxBox {
-  background-color: var(--blue-color); 
-  border-color: var(--blue-color); 
-  background-image: url('../../general-style/img/check.svg'); 
-  background-size: 13px 9px; 
-  background-position: center; 
+.lightCheckboxBox {
+  background-color: var(--white-color);
+}
+
+.darkCheckboxBox {
+  background-color: var(--black-color);
+}
+
+.input:checked+.checkboxBox {
+  background-color: var(--blue-color);
+  border-color: var(--blue-color);
+  background-image: url('../../general-style/img/check.svg');
+  background-size: 13px 9px;
+  background-position: center;
   background-repeat: no-repeat;
 }

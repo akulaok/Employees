@@ -13,9 +13,6 @@ export const setEmploye = createAction<EmployeType>(Actions.set_employe);
 export const setError = createAction<string | null>(Actions.set_error);
 export const isLoading = createAction<boolean>(Actions.set_is_loading);
 export const switchTheme = createAction<"light" | "dark">(Actions.switch_theme);
-export const setBreadcrumbs = createAction<{name: string; url?: string}[]>(
-  Actions.set_breadcrumbs
-);
 export const setActiveFilter = createAction<FilterCategory | null>(
   Actions.set_active_filter
 );

@@ -1,0 +1,14 @@
+.row {
+  border-top: 1px solid var(--gray-color);
+}
+
+.lightRow:hover {
+  background-color: var(--gray-color);
+}
+
+.darkRow:hover {
+  background-color: var(--dark-theme-grey-color);
+  border-top: 1px solid var(--dark-theme-grey-color);
+  border-bottom: 1px solid var(--dark-theme-grey-color);
+  
+}

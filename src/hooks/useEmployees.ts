@@ -8,6 +8,7 @@ export const useEmployees = () => {
   const filters = useAppSelector((state) => state.filters);
   const employees = useAppSelector((state) => state.foundEmployees);
   const prevFiltersRef = useRef<Record<string, string[] | undefined>>({});
+  const isInitialLoadRef = useRef(true);
 
   const updateEmployeesList = useCallback(() => {
     const currentFilters = getCurrentFilters(filters);
@@ -26,10 +27,11 @@ export const useEmployees = () => {
   }, [dispatch, filters]);
 
   useEffect(() => {
-    if (!employees.length) {
+    if (isInitialLoadRef.current) {
+      isInitialLoadRef.current = false;
       updateEmployeesList();
     }
-  }, [employees.length, updateEmployeesList]);
+  }, [updateEmployeesList]);
 
   return {employees, updateEmployeesList};
 };

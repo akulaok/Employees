@@ -8,16 +8,21 @@ import ChosenFilters from "../../components/ChosenFilters/ChosenFilters";
 import EmpoyeesTable from "../../components/EmlpoyeeTable/EmlpoyeeTable";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import {useAppSelector} from "../../hooks";
 
 function EmployeesListPage(): JSX.Element {
+  const theme = useAppSelector((state) => state.theme);
+
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles[`${theme}Page`]}`}>
       <Header />
-      <Breadcrumbs/>
+      <Breadcrumbs />
       <div className={styles.main}>
         <div className={styles.pageControls}>
           <div className={styles.pageFilters}>
-            <h1>Список сотрудников</h1>
+            <h1 className={`${styles.text} ${styles[`${theme}Text`]}`}>
+              Список сотрудников
+            </h1>
             <div className={styles.filtersBox}>
               <FilterList
                 filterType={FilterCategory.Position}
@@ -33,9 +38,9 @@ function EmployeesListPage(): JSX.Element {
               />
             </div>
           </div>
-          <SearchBar />
+          <SearchBar theme={theme} />
         </div>
-        <ChosenFilters />
+        <ChosenFilters theme={theme} />
         <EmpoyeesTable />
       </div>
     </div>

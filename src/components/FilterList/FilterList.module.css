@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 267px;
-  border-top: 1px solid var(--blue-color);
-  box-shadow: 0px 4px 4px 0px var(--black-color);
   padding: 20px;
   box-sizing: border-box;
   gap: 16px;
@@ -12,7 +10,16 @@
   top: 100%; 
   right: 0; 
   margin-top: 8px;
+  border-top: 1px solid var(--blue-color);
+  box-shadow: 0px 4px 4px 0px var(--black-shadow-color);
+}
+
+.lightFiltersList{
   background-color: var(--white-color);
+}
+
+.darkFiltersList{
+  background-color: var(--black-color);
 }
 
 .filter {

@@ -8,7 +8,7 @@ type ProfileDetailsProps = {
 function ProfileDetails({name, position}: ProfileDetailsProps): JSX.Element {
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className={styles.header}>{name}</h1>
       <span className={styles.text}>{position}</span>
     </div>
   );

@@ -2,9 +2,10 @@ import {JSX} from "react";
 import {EmployeType} from "../../types/empoyee-type";
 import {useNavigate} from "react-router-dom";
 import {AppRoute} from "../../consts";
-import {useAppDispatch} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setEmploye} from "../../store/action";
 import {formatDate} from "../../utils/formatDate";
+import styles from "./EmployeesTableRow.module.css";
 
 type EmployeesTableRowProps = {
   employe: EmployeType;
@@ -12,6 +13,7 @@ type EmployeesTableRowProps = {
 
 function EmployeesTableRow({employe}: EmployeesTableRowProps): JSX.Element {
   const navigate = useNavigate();
+  const theme = useAppSelector((state) => state.theme);
   const dispatch = useAppDispatch();
   const handleRowClick = () => {
     dispatch(setEmploye(employe));
@@ -20,7 +22,10 @@ function EmployeesTableRow({employe}: EmployeesTableRowProps): JSX.Element {
   };
 
   return (
-    <tr onClick={handleRowClick}>
+    <tr
+      className={`${styles.row} ${styles[`${theme}Row`]}`}
+      onClick={handleRowClick}
+    >
       <td>{employe.name}</td>
       <td>{employe.position}</td>
       <td>{employe.phone}</td>

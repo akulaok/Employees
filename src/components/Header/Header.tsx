@@ -3,12 +3,14 @@ import styles from "./Header.module.css";
 import {AppRoute} from "../../consts";
 import {JSX} from "react";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import { useAppSelector } from "../../hooks";
 
 function Header(): JSX.Element {
+  const theme = useAppSelector((state) => state.theme)
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${styles[`${theme}Wrapper`]}`}>
       <div className={styles.icon}>
-        <Link className="header__logo-link" to={AppRoute.EmployeesList} />
+        <Link to={AppRoute.EmployeesList} />
       </div>
       <div className={styles.info}>
         <div className={styles.contacts}>

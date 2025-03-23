@@ -1,0 +1,16 @@
+.page {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lightPage {
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
+.darkPage {
+  background-color: var(--black-color);
+  color: var(--white-text-color);
+}

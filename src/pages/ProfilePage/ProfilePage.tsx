@@ -9,17 +9,22 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 function ProfilePage(): JSX.Element {
   const dispatch = useAppDispatch();
-  const employe = useAppSelector((state) => state.selectedEmploye);
+  const {employe, theme} = useAppSelector((state) => ({
+    employe: state.selectedEmploye,
+    theme: state.theme,
+  }));
   const empoyeId = localStorage.getItem("employeId");
 
   useEffect(() => {
-    if (empoyeId && !employe) { dispatch(getEmployee(empoyeId)); }
+    if (empoyeId && !employe) {
+      dispatch(getEmployee(empoyeId));
+    }
   }, [empoyeId, dispatch, employe]);
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${styles[`${theme}Page`]}`}>
       <Header />
-      <Breadcrumbs/>
+      <Breadcrumbs />
       <ProfileHeader employe={employe} />
       <ProfileMainInfo employe={employe} />
     </div>

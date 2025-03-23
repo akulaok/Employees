@@ -3,7 +3,6 @@ import {StateType} from "../types/state-type";
 import {
   isLoading,
   setActiveFilter,
-  setBreadcrumbs,
   setEmploye,
   setEmployeesList,
   setError,
@@ -35,10 +34,6 @@ const initialState: StateType = {
   isLoading: true,
   error: null,
   selectedEmploye: null,
-  breadcrumbs: [
-    {name: "Главная"},
-    {name: "Список сотрудников", url: "/employees"},
-  ],
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -74,9 +69,6 @@ const reducer = createReducer(initialState, (builder) => {
       filterState[value] = !filterState[value];
       saveFiltersToLocalStorage(state.filters);
     })
-    .addCase(setBreadcrumbs, (state, action) => {
-      state.breadcrumbs = action.payload;
-    });
 });
 
 export default reducer;

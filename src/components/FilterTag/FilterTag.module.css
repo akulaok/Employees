@@ -1,6 +1,5 @@
 .tag {
   display: flex;
-  background-color: var(--white-color);
   padding: 10px;
   height: 19px;
   gap: 10px;
@@ -10,14 +9,31 @@
   flex-direction: row;
 }
 
+.lightTag {
+  background-color: var(--white-color);
+}
+
+.darkTag {
+  background-color: var(--black-color);
+}
+
+
 .button {
   border: none;
-  background-image: url(../../general-style/img/cansel_Button.svg);
   width: 10px;
   height: 10px;
-  background-color: var(--white-color);
   background-size: cover;
   background-position: center;
   padding: 0;
   cursor: pointer;
+}
+
+.lightButton {
+  background-color: var(--white-color);
+  background-image: url(../../general-style/img/light_cansel_Button.svg);
+}
+
+.darkButton {
+  background-color: var(--black-color);
+  background-image: url(../../general-style/img/dark_cancel_Button.svg);
 }

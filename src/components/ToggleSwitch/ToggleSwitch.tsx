@@ -9,6 +9,7 @@ function ToggleSwitch(): JSX.Element {
 
   const handleThemeToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
     dispatch(switchTheme(newTheme));
   };
 

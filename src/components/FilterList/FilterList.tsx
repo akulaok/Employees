@@ -12,7 +12,10 @@ type FilterListProps = {
 };
 
 function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
-  const activeFilter = useAppSelector((state) => state.expandedFilter);
+  const {activeFilter, theme} = useAppSelector((state) => ({
+    activeFilter: state.expandedFilter,
+    theme: state.theme,
+  }));
   const isOpen = activeFilter === filterType;
   const dispatch = useAppDispatch();
   const filterRef = useRef<HTMLFormElement>(null);
@@ -38,11 +41,22 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
 
   return (
     <form className={styles.filter} ref={filterRef}>
-      <FilterListHeader text={filterType} isOpen={isOpen} onClick={toggleFilter} />
+      <FilterListHeader
+        text={filterType}
+        isOpen={isOpen}
+        onClick={toggleFilter}
+      />
       {isOpen && (
-        <ul className={styles.filtersList}>
+        <ul
+          className={`${styles.filtersList} ${styles[`${theme}FiltersList`]}`}
+        >
           {Object.entries(filterOptions).map(([key, value]) => (
-            <FilterListOption key={key} text={value} filterType={filterType} />
+            <FilterListOption
+              theme={theme}
+              key={key}
+              text={value}
+              filterType={filterType}
+            />
           ))}
         </ul>
       )}

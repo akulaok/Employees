@@ -3,8 +3,13 @@ import styles from "./SearchBar.module.css";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setFoundEmployeesList} from "../../store/action";
 import {searchEmployees} from "../../utils/searchByName";
+import {ThemeType} from "../../types/filter-type";
 
-function SearchBar(): JSX.Element {
+type SearchBarProps = {
+  theme: ThemeType;
+};
+
+function SearchBar({theme}: SearchBarProps): JSX.Element {
   const dispatch = useAppDispatch();
   const originalEmployees = useAppSelector((state) => state.employees);
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +26,7 @@ function SearchBar(): JSX.Element {
 
   return (
     <input
-      className={styles.searchBar}
+      className={`${styles.searchBar} ${styles[`${theme}SearchBar`]}`}
       type="text"
       placeholder="Поиск"
       value={searchQuery}

@@ -1,5 +1,15 @@
 .backgroundWrapper {
+  width: 100%;
+}
+
+.lightBackgroundWrapper {
   background-color: var(--gray-color);
+  width: 100%;
+}
+
+
+.darkBackgroundWrapper {
+  background-color: var(--dark-theme-grey-color);
   width: 100%;
 }
 
@@ -7,7 +17,7 @@
   min-height: 71px;
   width: 100%;
   box-sizing: border-box;
-  padding: 13px calc((100% - 80%) / 2);
+  padding: 13px 10%;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -16,7 +26,6 @@
 }
 
 .text {
-  color: var(--black-color);
   font-weight: 500;
   font-size: 20px;
   min-width: 206px;

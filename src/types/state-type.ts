@@ -16,7 +16,6 @@ export type StateType = {
   isLoading: boolean;
   error: string | null;
   selectedEmploye: EmployeType | null;
-  breadcrumbs: {name: string; url?: string}[];
 };
 
 export type FiltersState = {

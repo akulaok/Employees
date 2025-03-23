@@ -1,10 +1,14 @@
 :root {
   --black-color: rgba(41, 41, 41, 1);
-  --blue-shadow-color: rgba(57, 113, 164, 0.25);
-  --blue-color: #155DA4;
-  --gray-color: rgba(242, 242, 242, 1);
+  --black-shadow-color: rgba(0, 0, 0, 0.25);
   --white-color: rgba(255, 255, 255, 1);
-  --gray-text-color: rgba(176, 176, 176, 1);
+  --white-text-color: rgba(245, 245, 245, 1);
+  --blue-color: #155DA4;
   --active-blue-color: #104376;
+  --light-theme-blue-shadow-color: rgba(57, 113, 164, 0.25);
+  --dark-theme-blak-shadow-color: rgba(0, 0, 0, 0.1);
+  --gray-color: rgba(242, 242, 242, 1);
+  --dark-theme-grey-color: rgba(62, 62, 62, 1);
+  --gray-text-color: rgba(176, 176, 176, 1);
   --dark-grey: rgba(129, 129, 129, 1);
 }

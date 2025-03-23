@@ -1,11 +1,14 @@
 import {JSX} from "react";
 import styles from "./ProfileTag.module.css";
+import {useAppSelector} from "../../hooks";
 type ProfileTagProps = {
   tag: string;
 };
 
 function ProfileTag({tag}: ProfileTagProps): JSX.Element {
-  return <div className={styles.tag}>{tag}</div>;
+  const theme = useAppSelector((state) => state.theme);
+
+  return <div className={`${styles.tag} ${styles[`${theme}Tag`]}`}>{tag}</div>;
 }
 
 export default ProfileTag;

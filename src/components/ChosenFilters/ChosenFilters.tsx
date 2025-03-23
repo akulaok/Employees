@@ -1,13 +1,22 @@
-import { JSX } from "react";
+import {JSX} from "react";
 import styles from "./ChosenFilters.module.css";
 import FilterTagList from "../FilterTagList/FilterTagList";
-import { useEmployees } from "../../hooks/useEmployees";
+import {useEmployees} from "../../hooks/useEmployees";
+import {ThemeType} from "../../types/filter-type";
 
-function ChosenFilters(): JSX.Element {
-  const { updateEmployeesList } = useEmployees();
+type ChosenFiltersProps = {
+  theme: ThemeType;
+};
+
+function ChosenFilters({theme}: ChosenFiltersProps): JSX.Element {
+  const {updateEmployeesList} = useEmployees();
 
   return (
-    <div className={styles.backgroundWrapper}>
+    <div
+      className={`${styles.backgroundWrapper} ${
+        styles[`${theme}BackgroundWrapper`]
+      }`}
+    >
       <div className={styles.main}>
         <div className={styles.filtersWrapper}>
           <span className={styles.text}>Выбранные фильтры:</span>

@@ -17,15 +17,15 @@ function EmpoyeesTable(): JSX.Element {
             <th>Дата рождения</th>
           </tr>
         </thead>
-        <tbody>
-          {employees.length ? (
-            employees.map((employe) => (
+        {employees.length ? (
+          <tbody>
+            {employees.map((employe) => (
               <EmpoyeesTableRow key={employe.id} employe={employe} />
-            ))
-          ) : (
-            <span></span>
-          )}
-        </tbody>
+            ))}
+          </tbody>
+        ) : (
+          <tfoot>Работники не найдены</tfoot>
+        )}
       </table>
     </div>
   );
