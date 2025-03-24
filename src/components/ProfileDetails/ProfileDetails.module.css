@@ -1,4 +1,4 @@
-.header{
+.header {
   font-weight: 700;
   font-size: 40px;
   padding-bottom: 16px;
@@ -10,6 +10,16 @@
   font-size: 24px;
 }
 
-.tagsBox{
-  padding-top: 24px;
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 20px;
+    padding-bottom: 8px;
+  }
+
+  .text {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
 }

@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 40px 50px;
   max-width: 1610px;
+
 }
 
 .gridContainer {
@@ -30,4 +31,29 @@ h2 {
   font-weight: 600;
   font-size: 32px;
   margin: 0 0 32px 0;
+}
+
+@media (max-width: 768px) {
+  .mainInfo {
+    padding: 20px 8%;
+  }
+  
+  .gridContainer {
+    column-gap: 18px;
+    row-gap: 12px;
+  }
+  
+  .value {
+    font-size: 14px;
+  }
+  
+  .label {
+    font-size: 14px;
+  }
+  
+  h2 {
+    font-size: 16px;
+    margin: 0 0 16px 0;
+  }
+
 }
