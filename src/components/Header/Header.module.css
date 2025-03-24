@@ -1,12 +1,13 @@
 .wrapper {
   display: flex;
   height: 85.29px;
+  max-width: 1610px;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
   gap: 45px;
-  padding: 25px calc((100% - 80%) / 2);
+  padding: 0 50px;
   box-sizing: border-box;
 }
 
@@ -44,15 +45,17 @@
   gap: 64px;
 }
 
-/* @media (max-width: 376px) {
-  .wrapper {
-      padding-left: 29px;
-      padding-top: 21px;
-      padding-bottom: 22px;
-      gap: 26px;
+@media (max-width: 768px) {
+  .icon{
+    height: 22px;
+    width: 52px;
+  }
+  .contacts {
+    display: none;
   }
 
-  .blue_text {
-      display: none;
+  .wrapper {
+    height: 54px;
+    padding: 16px 8%;
   }
-} */
+}

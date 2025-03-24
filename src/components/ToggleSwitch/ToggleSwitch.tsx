@@ -17,7 +17,7 @@ function ToggleSwitch(): JSX.Element {
     <label className={styles.switch}>
       <input
         type="checkbox"
-        checked={theme === "dark"}
+        checked={theme === "light"}
         onChange={handleThemeToggle}
       />
       <span className={`${styles.slider} ${styles.round}`}></span>

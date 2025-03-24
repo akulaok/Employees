@@ -1,6 +1,6 @@
 import {JSX, useEffect, useRef} from "react";
 import FilterListOption from "../FilterListOption/FilterListOption";
-import styles from "./FilterList.module.css";
+import styles from "../FilterListBox/FilterListBox.module.css";
 import {FilterCategory} from "../../types/filter-type";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setActiveFilter} from "../../store/action";

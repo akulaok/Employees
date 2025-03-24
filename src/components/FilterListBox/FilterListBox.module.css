@@ -1,0 +1,66 @@
+.filtersBox {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 32px;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.filtersList {
+  display: flex;
+  flex-direction: column;
+  width: 267px;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 16px;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  border-top: 1px solid var(--blue-color);
+  box-shadow: 0px 4px 4px 0px var(--black-shadow-color);
+}
+
+.lightFiltersList {
+  background-color: var(--white-color);
+}
+
+.darkFiltersList {
+  background-color: var(--black-color);
+}
+
+.filter {
+  display: flex;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .filtersBox {
+    gap: 12px;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .filtersList {
+    width: 224px;
+    gap: 12px;
+  }
+
+  .leftFilter .filtersList {
+    left: 0;
+    right: auto;
+  }
+
+  .centerFilter .filtersList {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .rightFilter .filtersList {
+    right: 0;
+    left: auto;
+  }
+}

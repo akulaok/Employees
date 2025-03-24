@@ -1,6 +1,7 @@
 .wrapper {
   width: 100%;
-  padding: 0 10%;
+  max-width: 1610px;
+  padding: 0 50px;
   box-sizing: border-box;
 }
 
@@ -12,29 +13,72 @@
 
 tr {
   height: 79px;
-  padding: 28px 12px;
   box-sizing: border-box;
+  margin: 0 12px;
 }
 
 th,
 td {
   text-align: left;
   vertical-align: middle;
-  padding: 28px 12px;
+  padding: 28px 0;
   box-sizing: border-box;
 }
 
 th {
   color: var(--gray-text-color);
-  font-family: Raleway;
   font-weight: 500;
   font-size: 20px;
   line-height: 100%;
 }
 
 td {
-  font-family: Raleway;
   font-weight: 400;
   font-size: 20px;
   line-height: 100%;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .table {
+    min-width: 430px;
+  }
+
+  thead tr {
+    height: 42px;
+    padding: 0 24px;
+  }
+
+  th {
+    text-align: left;
+    vertical-align: bottom;
+    padding: 24px 0 4px 12px;
+    font-size: 10px;
+  }
+
+  td {
+    font-size: 12px;
+    padding-left: 10px;
+  }
+
+  td:first-child {
+    padding-left: 12px;
+  }
+
+  td:last-child {
+    padding-right: 12px;
+  }
+
+  th:first-child {
+    padding-left: 12px;
+  }
+
+  th:last-child {
+    padding-right: 12px;
+  }
 }

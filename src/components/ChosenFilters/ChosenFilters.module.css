@@ -1,23 +1,24 @@
 .backgroundWrapper {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .lightBackgroundWrapper {
   background-color: var(--gray-color);
-  width: 100%;
 }
 
 
 .darkBackgroundWrapper {
   background-color: var(--dark-theme-grey-color);
-  width: 100%;
 }
 
 .main {
   min-height: 71px;
+  max-width: 1610px;
   width: 100%;
   box-sizing: border-box;
-  padding: 13px 10%;
+  padding: 13px 50px;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -48,7 +49,6 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20.8px;
-  font-family: Raleway;
 }
 
 .button:hover {
@@ -60,4 +60,29 @@
   box-shadow: 0px 4px 4px 0px #00000040 inset;
   cursor: pointer;
   color: var(--gray-text-color);
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 16px 8%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .button {
+    height: 28px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  .filtersWrapper {
+    gap: 12px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }

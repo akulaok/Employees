@@ -35,3 +35,10 @@
 .searchBar:focus::placeholder {
   color: var(--dark-grey);
 }
+
+@media (max-width: 768px) {
+  .searchBar {
+    height: 34px;
+    font-size: 12px;
+  }
+}

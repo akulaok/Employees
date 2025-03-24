@@ -1,9 +1,8 @@
 .mainInfo {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  width: 100%;
   box-sizing: border-box;
-  padding-top: 40px;
+  padding: 40px 50px;
+  max-width: 1610px;
 }
 
 .gridContainer {

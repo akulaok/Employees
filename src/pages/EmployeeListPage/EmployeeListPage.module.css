@@ -4,6 +4,10 @@
   min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .lightPage {
@@ -14,36 +18,4 @@
 .darkPage {
   background-color: var(--black-color);
   color: var(--white-text-color);
-}
-
-.pageControls {
-  display: flex;
-  padding-left: 10%;
-  padding-right: 10%;
-  flex-direction: column;
-  padding-bottom: 28px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.pageFilters {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-.filtersBox {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 32px;
-  align-items: flex-start;
-  flex-direction: row;
-}
-
-.text {
-  font-weight: 700;
-  font-size: 40px;
-  margin-top: 16px;
-  margin-bottom: 28px;
 }

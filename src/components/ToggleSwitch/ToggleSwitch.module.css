@@ -52,3 +52,29 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+  .switch {
+    width: 47px;
+    height: 22px;
+  }
+
+  .slider:before {
+    height: 17px;
+    width: 17px;
+    left: 2.5px;
+    bottom: 2.5px;
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(25px);
+    background-size: 14px 14px; 
+    background-position: 2px 2px;;
+    background-image: url('../../general-style/img/themeImg/Moon.svg');
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }  
+  
+}

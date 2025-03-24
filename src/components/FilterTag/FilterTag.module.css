@@ -1,7 +1,6 @@
 .tag {
   display: flex;
   padding: 10px;
-  height: 19px;
   gap: 10px;
   border-radius: 5px;
   align-items: center;

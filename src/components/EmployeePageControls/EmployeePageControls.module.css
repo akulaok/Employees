@@ -1,0 +1,45 @@
+.pageControls {
+  display: flex;
+  max-width: 1610px;
+  width: 100%;
+  flex-direction: column;
+  padding: 0 50px 28px 50px;
+  box-sizing: border-box;
+}
+
+.pageFilters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 40px;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .pageControlsMobile {
+    display: flex;
+    padding-left: 8%;
+    padding-right: 8%;
+    flex-direction: column;
+    padding-bottom: 28px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .text {
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .pageControls {
+    display: none;
+  }
+}
