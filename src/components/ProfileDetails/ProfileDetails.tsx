@@ -1,4 +1,4 @@
-import {JSX} from "react";
+import {JSX, memo} from "react";
 import styles from "./ProfileDetails.module.css";
 type ProfileDetailsProps = {
   name: string;
@@ -14,4 +14,4 @@ function ProfileDetails({name, position}: ProfileDetailsProps): JSX.Element {
   );
 }
 
-export default ProfileDetails;
+export default memo(ProfileDetails);

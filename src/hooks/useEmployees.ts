@@ -1,4 +1,4 @@
-import {useEffect, useCallback, useRef} from "react";
+import {useEffect, useCallback, useRef, useMemo} from "react";
 import {getEmployeesList} from "../store/api-action";
 import {getCurrentFilters} from "../utils/filters";
 import {useAppDispatch, useAppSelector} from ".";
@@ -9,9 +9,9 @@ export const useEmployees = () => {
   const employees = useAppSelector((state) => state.foundEmployees);
   const prevFiltersRef = useRef<Record<string, string[] | undefined>>({});
   const isInitialLoadRef = useRef(true);
+  const currentFilters = useMemo(() => getCurrentFilters(filters), [filters]);
 
   const updateEmployeesList = useCallback(() => {
-    const currentFilters = getCurrentFilters(filters);
     if (
       JSON.stringify(currentFilters) !== JSON.stringify(prevFiltersRef.current)
     ) {

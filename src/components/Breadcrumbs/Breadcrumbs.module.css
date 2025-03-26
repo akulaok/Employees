@@ -39,25 +39,20 @@ a {
 
 @media (max-width: 768px) {
   nav {
-    width: 100%;
     padding: 15px 8%;
-    box-sizing: border-box;
-    overflow-x: hidden;
   }
 
   .breadcrumbsList {
-    font-weight: 500;
     font-size: 12px;
     gap: 20px;
   }
 
   .breadcrumbsList li:first-child {
-    list-style: none;
     padding-left: 0;
   }
 
   .breadcrumbsList li:first-child::marker {
-    content: '';
+    content: none;
   }
 
   .link::marker {

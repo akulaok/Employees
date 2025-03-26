@@ -1,17 +1,18 @@
 import styles from "./ToggleSwitch.module.css";
-import {JSX} from "react";
+import {JSX, memo, useCallback} from "react";
 import {switchTheme} from "../../store/action";
 import {useAppDispatch, useAppSelector} from "../../hooks";
+import { ThemeType } from "../../types/filter-type";
 
 function ToggleSwitch(): JSX.Element {
   const theme = useAppSelector((state) => state.theme);
   const dispatch = useAppDispatch();
 
-  const handleThemeToggle = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+  const handleThemeToggle = useCallback(() => {
+    const newTheme: ThemeType = theme === "light" ? "dark" : "light";
     localStorage.setItem("theme", newTheme);
     dispatch(switchTheme(newTheme));
-  };
+  }, [theme, dispatch]);
 
   return (
     <label className={styles.switch}>
@@ -25,4 +26,4 @@ function ToggleSwitch(): JSX.Element {
   );
 }
 
-export default ToggleSwitch;
+export default memo(ToggleSwitch);

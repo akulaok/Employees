@@ -1,25 +1,25 @@
 import {Link} from "react-router-dom";
 import styles from "./Header.module.css";
 import {AppRoute} from "../../consts";
-import {JSX} from "react";
+import {JSX, memo} from "react";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import { useAppSelector } from "../../hooks";
+import {useAppSelector} from "../../hooks";
 
 function Header(): JSX.Element {
-  const theme = useAppSelector((state) => state.theme)
+  const theme = useAppSelector((state) => state.theme);
   return (
-    <div className={`${styles.wrapper} ${styles[`${theme}Wrapper`]}`}>
+    <header className={`${styles.wrapper} ${styles[`${theme}Wrapper`]}`}>
       <div className={styles.icon}>
-        <Link to={AppRoute.EmployeesList} />
+        <Link to={AppRoute.EmployeesList} aria-label="На главную страницу" />
       </div>
       <div className={styles.info}>
-        <div className={styles.contacts}>
+        <address className={styles.contacts}>
           <span className={styles.text}>+7 343 290 84 76</span>
           <span className={styles.text}>info@66bit.ru</span>
-        </div>
+        </address>
         <ToggleSwitch />
       </div>
-    </div>
+    </header>
   );
 }
-export default Header;
+export default memo(Header);

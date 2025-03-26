@@ -1,4 +1,4 @@
-import {JSX} from "react";
+import {JSX, memo, useMemo} from "react";
 import {EmployeType} from "../../types/empoyee-type";
 import styles from "./ProfileMainInfo.module.css";
 import {formatDate} from "../../utils/formatDate";
@@ -7,6 +7,14 @@ type ProfileMainInfoProps = {
 };
 
 function ProfileMainInfo({employe}: ProfileMainInfoProps): JSX.Element {
+  const formattedDates = useMemo(
+    () => ({
+      birthdate: formatDate(employe?.birthdate),
+      employmentDate: formatDate(employe?.dateOfEmployment),
+    }),
+    [employe?.birthdate, employe?.dateOfEmployment]
+  );
+
   return (
     <div className={styles.mainInfo}>
       <h2>Основная информация</h2>
@@ -15,15 +23,13 @@ function ProfileMainInfo({employe}: ProfileMainInfoProps): JSX.Element {
         <div className={styles.value}>{employe?.phone}</div>
 
         <div className={styles.label}>Дата рождения:</div>
-        <div className={styles.value}>{formatDate(employe?.birthdate)}</div>
+        <div className={styles.value}>{formattedDates.birthdate}</div>
 
         <div className={styles.label}>Дата устройства:</div>
-        <div className={styles.value}>
-          {formatDate(employe?.dateOfEmployment)}
-        </div>
+        <div className={styles.value}>{formattedDates.employmentDate}</div>
       </div>
     </div>
   );
 }
 
-export default ProfileMainInfo;
+export default memo(ProfileMainInfo);

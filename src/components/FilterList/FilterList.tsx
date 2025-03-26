@@ -1,4 +1,4 @@
-import {JSX, useEffect, useRef} from "react";
+import {JSX, memo, useCallback, useEffect, useMemo, useRef} from "react";
 import FilterListOption from "../FilterListOption/FilterListOption";
 import styles from "../FilterListBox/FilterListBox.module.css";
 import {FilterCategory} from "../../types/filter-type";
@@ -20,12 +20,17 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
   const dispatch = useAppDispatch();
   const filterRef = useRef<HTMLFormElement>(null);
 
-  const toggleFilter = () => {
+  const toggleFilter = useCallback(() => {
     dispatch(setActiveFilter(isOpen ? null : filterType));
-  };
+  }, [dispatch, isOpen, filterType]);
+
+  const filtersListClasses = useMemo(
+    () => `${styles.filtersList} ${styles[`${theme}FiltersList`]}`,
+    [theme]
+  );
 
   useEffect(() => {
-    const closeOnOutsideClick = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         isOpen &&
         filterRef.current &&
@@ -35,8 +40,8 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
       }
     };
 
-    document.addEventListener("mousedown", closeOnOutsideClick);
-    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen, dispatch]);
 
   return (
@@ -48,7 +53,7 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
       />
       {isOpen && (
         <ul
-          className={`${styles.filtersList} ${styles[`${theme}FiltersList`]}`}
+          className={filtersListClasses}
         >
           {Object.entries(filterOptions).map(([key, value]) => (
             <FilterListOption
@@ -64,4 +69,4 @@ function FilterList({filterType, filterOptions}: FilterListProps): JSX.Element {
   );
 }
 
-export default FilterList;
+export default memo(FilterList);

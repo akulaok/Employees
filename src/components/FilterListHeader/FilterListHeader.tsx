@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, useMemo } from "react";
 import styles from "./FilterListHeader.module.css";
 
 type FilterListHeaderProps = {
@@ -8,15 +8,24 @@ type FilterListHeaderProps = {
 };
 
 function FilterListHeader({ text, isOpen, onClick }: FilterListHeaderProps): JSX.Element {
+  const arrowIcon = useMemo(
+    () => 
+      isOpen 
+        ? "/src/general-style/img/arrows/arrow_up.svg" 
+        : "/src/general-style/img/arrows/arrow_down.svg",
+    [isOpen]
+  );
+
+  const textClassName = useMemo(
+    () => (isOpen ? styles.text_active : styles.text),
+    [isOpen]
+  );
+
   return (
     <div onClick={onClick}>
-      <span className={isOpen ? styles.text_active : styles.text}>{text}</span>
+      <span className={textClassName}>{text}</span>
       <img
-        src={
-          isOpen
-            ? "/src/general-style/img/arrows/arrow_up.svg"
-            : "/src/general-style/img/arrows/arrow_down.svg"
-        }
+        src={arrowIcon}
         alt="arrow"
       />
     </div>

@@ -1,4 +1,4 @@
-import React, {JSX, useState, useEffect} from "react";
+import React, {JSX, useState, useEffect, useMemo, useCallback} from "react";
 import styles from "./SearchBar.module.css";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {setFoundEmployeesList} from "../../store/action";
@@ -14,15 +14,21 @@ function SearchBar({theme}: SearchBarProps): JSX.Element {
   const originalEmployees = useAppSelector((state) => state.employees);
   const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(() => {
-    const foundEmployees = searchEmployees(searchQuery, originalEmployees);
-    dispatch(setFoundEmployeesList(foundEmployees));
-  }, [originalEmployees, searchQuery, dispatch]);
+  const foundEmployees = useMemo(
+    () => searchEmployees(searchQuery, originalEmployees),
+    [searchQuery, originalEmployees]
+  );
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const query = event.target.value;
-    setSearchQuery(query);
-  };
+  useEffect(() => {
+    dispatch(setFoundEmployeesList(foundEmployees));
+  }, [foundEmployees, dispatch]);
+
+  const handleInputChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchQuery(event.target.value);
+    },
+    []
+  );
 
   return (
     <input

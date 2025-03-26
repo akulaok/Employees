@@ -1,4 +1,4 @@
-import {JSX} from "react";
+import {JSX, memo} from "react";
 import {EmployeType} from "../../types/empoyee-type";
 import ProfilePhoto from "../ProfilePhoto/ProfilePhoto";
 import styles from "./ProfileHeader.module.css";
@@ -31,4 +31,4 @@ function ProfileHeader({employe}: ProfileHeaderProps): JSX.Element {
   );
 }
 
-export default ProfileHeader;
+export default memo(ProfileHeader);

@@ -1,9 +1,9 @@
-import {JSX} from "react";
+import {JSX, memo} from "react";
 import EmpoyeesTableRow from "../EmployeeTableRow/EmpoyeeTableRow";
 import styles from "./EmlpoyeeTable.module.css";
 import {useEmployees} from "../../hooks/useEmployees";
 
-function EmpoyeesTable(): JSX.Element {
+function EmployeesTable(): JSX.Element {
   const {employees} = useEmployees();
 
   return (
@@ -31,4 +31,4 @@ function EmpoyeesTable(): JSX.Element {
   );
 }
 
-export default EmpoyeesTable;
+export default memo(EmployeesTable);

@@ -1,4 +1,4 @@
-import {JSX} from "react";
+import {JSX, useMemo} from "react";
 import {useAppSelector} from "../../hooks";
 import FilterTag from "../FilterTag/FilterTag";
 import styles from "./FilterTagList.module.css";
@@ -9,14 +9,17 @@ function FilterTagList(): JSX.Element {
     filters: state.filters,
     theme: state.theme,
   }));
-  const tags = Object.entries(filters).flatMap(([filterType, filterGroup]) =>
-    Object.entries(filterGroup ?? {})
-      .filter(([_, value]) => value)
-      .map(([key]) => ({
-        tag: key as FilterValue,
-        filterType: filterType as FilterCategory,
-      }))
-  );
+
+  const tags = useMemo(() => {
+    return Object.entries(filters).flatMap(([filterType, filterGroup]) =>
+      Object.entries(filterGroup ?? {})
+        .filter(([_, value]) => value)
+        .map(([key]) => ({
+          tag: key as FilterValue,
+          filterType: filterType as FilterCategory,
+        }))
+    );
+  }, [filters]);
   return (
     <div className={styles.tagList}>
       {tags.map(({tag, filterType}) => (
