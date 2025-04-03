@@ -31,6 +31,7 @@ export enum Technology {
 
 export enum Actions {
   set_employees_list = "employees/setList",
+  add_employees_list = "employees/addList",
   set_employe = "employe/setEmploye",
   set_error = "app/setError",
   set_is_loading = "app/isLoading",
@@ -40,6 +41,8 @@ export enum Actions {
   set_active_filter = "filters/setActiveFilter",
   set_filters = "filters/setFilters",
   set_found_employees_list = "employees/setFoundList",
+  set_page = "employees/page",
+  is_employees_data = "employees/is_data",
 }
 
 export const TIMEOUT_SHOW_ERROR = 2000;

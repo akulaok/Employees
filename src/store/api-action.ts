@@ -1,7 +1,7 @@
 import {AxiosInstance} from "axios";
 import {AppDispatch, State} from "../types/state-type";
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {isLoading, setEmploye, setEmployeesList, setError} from "./action";
+import {setEmploye, setError} from "./action";
 import {Actions, TIMEOUT_SHOW_ERROR} from "../consts";
 import {store} from ".";
 import {EmployeesListType, EmployeType} from "../types/empoyee-type";
@@ -31,20 +31,22 @@ const buildQueryParams = (params: EmployeesListParams): string => {
 };
 
 export const getEmployeesList = createAsyncThunk<
-  void,
+  EmployeesListType,
   EmployeesListParams,
   {
     dispatch: AppDispatch;
     state: State;
     extra: AxiosInstance;
   }
->(Actions.set_employees_list, async (params, {dispatch, extra: api}) => {
+>(Actions.set_employees_list, async (params, {extra: api}) => {
   const queryParams = buildQueryParams(params);
-
-  dispatch(isLoading(true));
-  const {data} = await api.get<EmployeesListType>(`?${queryParams.toString()}`);
-  dispatch(setEmployeesList(data));
-  dispatch(isLoading(false));
+  const {data} = await api.get<EmployeesListType>(
+    `?${queryParams.toString()}`,
+    {
+      signal: params.signal,
+    }
+  );
+  return data;
 });
 
 export const getEmployee = createAsyncThunk<

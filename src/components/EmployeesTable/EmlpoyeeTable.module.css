@@ -38,6 +38,12 @@ td {
   line-height: 100%;
 }
 
+.hasMoreData{
+  color: var(--blue-color);
+  text-align: center;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .wrapper {
     padding: 0;

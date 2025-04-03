@@ -14,8 +14,10 @@ export type StateType = {
   expandedFilter: FilterCategory | null;
   theme: ThemeType;
   isLoading: boolean;
-  error: string | null;
+  error: string | null
   selectedEmploye: EmployeType | null;
+  loadedPage: number;
+  isEmployeesData: boolean;
 };
 
 export type FiltersState = {

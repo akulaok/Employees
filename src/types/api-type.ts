@@ -4,4 +4,5 @@ export type EmployeesListParams = {
   gender?: string[];
   position?: string[];
   stack?: string[];
+  signal?: AbortSignal;
 };

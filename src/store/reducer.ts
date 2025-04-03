@@ -1,12 +1,15 @@
 import {createReducer} from "@reduxjs/toolkit";
 import {StateType} from "../types/state-type";
 import {
-  isLoading,
+  addEmployeesList,
   setActiveFilter,
   setEmploye,
   setEmployeesList,
   setError,
   setFoundEmployeesList,
+  setIsEmployeesData,
+  setIsLoading,
+  setNewPage,
   setUpdateFilters,
   switchTheme,
 } from "./action";
@@ -34,6 +37,8 @@ const initialState: StateType = {
   isLoading: true,
   error: null,
   selectedEmploye: null,
+  loadedPage: 1,
+  isEmployeesData: true,
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -41,7 +46,7 @@ const reducer = createReducer(initialState, (builder) => {
     .addCase(setError, (state, action) => {
       state.error = action.payload;
     })
-    .addCase(isLoading, (state, action) => {
+    .addCase(setIsLoading, (state, action) => {
       state.isLoading = action.payload;
     })
     .addCase(switchTheme, (state, action) => {
@@ -57,8 +62,18 @@ const reducer = createReducer(initialState, (builder) => {
       state.employees = action.payload;
       state.foundEmployees = action.payload;
     })
+    .addCase(addEmployeesList, (state, action) => {
+      state.employees = [...state.employees, ...action.payload];
+      state.foundEmployees = [...state.employees, ...action.payload];
+    })
     .addCase(setActiveFilter, (state, action) => {
       state.expandedFilter = action.payload;
+    })
+    .addCase(setNewPage, (state, action) => {
+      state.loadedPage = action.payload;
+    })
+    .addCase(setIsEmployeesData, (state, action) => {
+      state.isEmployeesData = action.payload;
     })
     .addCase(setUpdateFilters, (state, action) => {
       const {filterType, value} = action.payload;
@@ -68,7 +83,7 @@ const reducer = createReducer(initialState, (builder) => {
       >;
       filterState[value] = !filterState[value];
       saveFiltersToLocalStorage(state.filters);
-    })
+    });
 });
 
 export default reducer;
