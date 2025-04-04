@@ -10,12 +10,6 @@ export type ThemeType = "light" | "dark";
 
 export type FilterValue = Gender | Position | Technology;
 
-// export const FilterTitles = {
-//   [FilterCategory.Gender]: "пол",
-//   [FilterCategory.Position]: "должность",
-//   [FilterCategory.Technology]: "стек",
-// };
-
 export const initialFilters = {
   [FilterCategory.Gender]: Object.values(Gender).reduce((acc, key) => {
     acc[key] = false;

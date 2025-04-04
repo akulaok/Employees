@@ -51,7 +51,7 @@ function EmployeesTable(): JSX.Element {
       </table>
       {
         <div className={styles.hasMoreData} ref={observerRef}>
-          <p>{hasMoreData ? "Загрузка..." : "Больше нет"}</p>
+          <p>{(hasMoreData && employees.length) ? "Загрузка..." : "Больше нет"}</p>
         </div>
       }
     </div>

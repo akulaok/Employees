@@ -10,10 +10,12 @@
 
 .lightTag {
   background-color: var(--white-color);
+  transition: .5s;
 }
 
 .darkTag {
   background-color: var(--black-color);
+  transition: .5s;
 }
 
 
@@ -30,9 +32,11 @@
 .lightButton {
   background-color: var(--white-color);
   background-image: url(../../general-style/img/light_cansel_Button.svg);
+  transition: .5s;
 }
 
 .darkButton {
   background-color: var(--black-color);
   background-image: url(../../general-style/img/dark_cancel_Button.svg);
+  transition: .5s;
 }

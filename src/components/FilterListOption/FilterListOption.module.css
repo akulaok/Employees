@@ -26,10 +26,12 @@
 
 .lightCheckboxBox {
   background-color: var(--white-color);
+  transition: .5s;
 }
 
 .darkCheckboxBox {
   background-color: var(--black-color);
+  transition: .5s;
 }
 
 .input:checked+.checkboxBox {

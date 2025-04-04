@@ -6,11 +6,15 @@
 
 .lightBackgroundWrapper {
   background-color: var(--gray-color);
+  color: var(--black-color);
+  transition: .5s;
 }
 
 
 .darkBackgroundWrapper {
   background-color: var(--dark-theme-grey-color);
+  color: var(--white-text-color);
+  transition: .5s;
 }
 
 .main {

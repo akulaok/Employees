@@ -25,10 +25,12 @@
 
 .lightFiltersList {
   background-color: var(--white-color);
+  transition: .5s;
 }
 
 .darkFiltersList {
   background-color: var(--black-color);
+  transition: .5s;
 }
 
 .filter {
