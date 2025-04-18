@@ -15,7 +15,7 @@ function Header(): JSX.Element {
       <div className={styles.info}>
         <address className={styles.contacts}>
           <span className={styles.text}>+7 343 290 84 76</span>
-          <span className={styles.text}>info@66bit.ru</span>
+          <span className={styles.text}>info@.ru</span>
         </address>
         <ToggleSwitch />
       </div>
